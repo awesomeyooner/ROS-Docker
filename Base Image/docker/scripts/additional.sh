@@ -13,8 +13,12 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 White='\033[0;37m'        # White
 
-echo -e "Installing ${Green}ros2_control${Color_Off}..."
+echo -e "Installing ${Green}Extra Bits${Color_Off}..."
+
+source ~/.bashrc
 
 sudo apt install -y ros-jazzy-ros2-control ros-jazzy-ros2-controllers
 
-echo -e "Finished Installing ${Green}ros2_control${Color_Off}!"
+pip3 install catkin_pkg
+
+echo -e "Finished Installing ${Green}Rxtra Bits${Color_Off}!"

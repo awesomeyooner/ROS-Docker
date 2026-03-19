@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Reset
+Color_Off='\033[0m'       # Text Reset
+
+# Regular Colors
+Black='\033[0;30m'        # Black
+Red='\033[0;31m'          # Red
+Green='\033[0;32m'        # Green
+Yellow='\033[0;33m'       # Yellow
+Blue='\033[0;34m'         # Blue
+Purple='\033[0;35m'       # Purple
+Cyan='\033[0;36m'         # Cyan
+White='\033[0;37m'        # White
+
+sudo chmod +x ./gazebo.sh
+sudo chmod +x ./ros2.sh
+sudo chmod +x ./anaconda.sh
+sudo chmod +x ./additional.sh
+
+./ros2.sh
+
+./gazebo.sh
+
+./anaconda.sh
+
+./additional.sh
+
+
+echo -e "${Green}Finished!${Color_Off}"
+
