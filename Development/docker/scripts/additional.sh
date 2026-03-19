@@ -17,8 +17,12 @@ echo -e "Installing ${Green}Extra Bits${Color_Off}..."
 
 source ~/.bashrc
 
-sudo apt install -y ros-jazzy-ros2-control ros-jazzy-ros2-controllers
+# Install APT Packages
+sudo apt install -y ros-jazzy-ros2-control \
+    ros-jazzy-ros2-controllers \
+    libserial-dev
 
-pip3 install catkin_pkg
+# Install PIP Packages
+~/anaconda3/bin/pip3 install catkin_pkg
 
 echo -e "Finished Installing ${Green}Rxtra Bits${Color_Off}!"
