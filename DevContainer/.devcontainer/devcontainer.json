@@ -12,6 +12,29 @@
     "mounts": [
         "source=${localWorkspaceFolder}/Documents,target=/home/ubuntu/Documents,type=bind,consistency=cached"
     ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "VisualStudioExptTeam.vscodeintellicode",
+                "ms-vscode.cpptools",
+                "ms-vscode.cpp-devtools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cpptools-themes",
+                "ms-vscode.cmake-tools",
+                "bbenoist.Doxygen",
+                "PolarRobotics.git-cli-helper",
+                "ms-python.isort",
+                "PolarRobotics.notes-viewer",
+                "christian-kohler.path-intellisense",
+                "ms-python.vscode-pylance",
+                "ms-python.python",
+                "ms-python.debugpy",
+                "ms-python.vscode-python-envs",
+                "PolarRobotics.roshelper",
+                "redhat.vscode-xml"
+            ]
+        }
+    },
     "postCreateCommand": "sudo chown -R $(id -u):$(id -g) /home/ubuntu/Documents",
     "runArgs": [
         "--env", "DISPLAY=${localEnv:DISPLAY}",
