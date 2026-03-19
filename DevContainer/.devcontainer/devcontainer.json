@@ -1,0 +1,29 @@
+{
+    "name": "ros2_jazzy", //CHANGE ME
+    "image": "ros2:jazzy",
+    // "build": {
+    //     "dockerfile": "Dockerfile", // Path to your Dockerfile
+    //     "options": [
+    //         "-t=my_image:my_tag" //CHANGE ME
+    //     ]
+    // },
+    "workspaceFolder": "/home/ubuntu",
+    "remoteUser": "ubuntu",
+    "mounts": [
+        "source=${localWorkspaceFolder}/Documents,target=/home/ubuntu/Documents,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": "sudo chown -R $(id -u):$(id -g) /home/ubuntu/Documents",
+    "runArgs": [
+        "--env", "DISPLAY=${localEnv:DISPLAY}",
+        "--env", "LIBGL_ALWAYS_INDIRECT=0",
+        "--env", "QT_X11_NO_MITSHM=1",
+        "--volume", "/tmp/.X11-unix:/tmp/.X11-unix",
+        "--volume", "/dev/dri:/dev/dri",
+        "--volume", "/dev/input:/dev/input",
+        "--device-cgroup-rule=c 13:* rmw",
+        "--network=host",
+        "--hostname", "container",
+        "--name", "my_container", //CHANGE ME
+        "--rm"
+    ]
+}
