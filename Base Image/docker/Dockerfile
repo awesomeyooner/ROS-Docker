@@ -34,20 +34,26 @@ WORKDIR /home/${USERNAME}
 
 # Start doing things below!
 
-# Scripts
+# ===== START OF SCRIPTS =====
 
 # Copy scripts into /tmp/scripts
 COPY scripts /tmp/scripts
 
 WORKDIR /tmp/scripts
 
+# Install Anaconda FIRST so that subsequent calls can use pip properly
+RUN sudo chmod +x anaconda.sh && ./anaconda.sh
+
+# Install Main Components
 RUN sudo chmod +x install.sh && ./install.sh
 
+# Switch back to HOME
 WORKDIR /home/${USERNAME}
 
+# Remove the script files
 RUN sudo rm -rf /tmp/scripts
 
-# End of Scripting
+# ===== END OF SCRIPTS =====
 
 COPY entrypoint.sh entrypoint.sh
 

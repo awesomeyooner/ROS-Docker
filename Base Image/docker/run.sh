@@ -15,4 +15,6 @@ docker run \
     --env QT_X11_NO_MITSHM=1 \
     --env LIBGL_ALWAYS_INDIRECT=0 \
     --volume /tmp/.X11-unix:/tmp/.X11-unix \
+    --volume /dev/input:/dev/input \
+    --device-cgroup-rule='c 13:* rmw' \
     ${NAME}:${TAG}
