@@ -20,7 +20,7 @@ source ~/.bashrc
 # Install APT Packages
 sudo apt install -y ros-jazzy-ros2-control \
     ros-jazzy-ros2-controllers \
-    ros-jazzy-joint-state-publisher-gui \ 
+    ros-jazzy-joint-state-publisher-gui \
     libserial-dev
 
 # Install PIP Packages
