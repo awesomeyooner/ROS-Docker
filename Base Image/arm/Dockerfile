@@ -43,9 +43,6 @@ COPY scripts /tmp/scripts
 
 WORKDIR /tmp/scripts
 
-# Install Anaconda FIRST so that subsequent calls can use pip properly
-RUN sudo chmod +x anaconda.sh && ./anaconda.sh
-
 # Install Main Components
 RUN sudo chmod +x install.sh && ./install.sh
 

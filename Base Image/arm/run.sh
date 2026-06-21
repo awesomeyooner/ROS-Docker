@@ -9,12 +9,14 @@ docker run \
     --hostname container \
     --name my_container \
     --user $(id -u):$(id -g) \
+    -e TERM=xterm-256color \
     --volume "$(pwd)/Documents":/home/ubuntu/Documents \
     --net=host \
-    --env DISPLAY=$DISPLAY \
-    --env QT_X11_NO_MITSHM=1 \
-    --env LIBGL_ALWAYS_INDIRECT=0 \
-    --volume /tmp/.X11-unix:/tmp/.X11-unix \
     --volume /dev/input:/dev/input \
     --device-cgroup-rule='c 13:* rmw' \
+    --device-cgroup-rule='c 166:* rmw' \
+    --device-cgroup-rule='c 188:* rmw' \
+    --device-cgroup-rule='c 81:* rmw' \
+    --device-cgroup-rule='a 189:* rmw' \
+    -v /dev:/dev \
     ${NAME}:${TAG}
