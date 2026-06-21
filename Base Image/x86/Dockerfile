@@ -26,6 +26,8 @@ ARG USERNAME="ubuntu"
 # No Password 
 RUN echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+RUN usermod -a -G dialout ${USERNAME}
+
 # Switch to new user (so any other commands won't be on root)
 USER ${USERNAME}
 
