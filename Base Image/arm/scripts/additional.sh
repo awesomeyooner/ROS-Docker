@@ -24,7 +24,4 @@ sudo apt install -y ros-jazzy-ros2-control \
     libserial-dev \
     v4l-utils
 
-# Install PIP Packages
-~/anaconda3/bin/pip3 install catkin_pkg
-
 echo -e "Finished Installing ${Green}Extra Bits${Color_Off}!"

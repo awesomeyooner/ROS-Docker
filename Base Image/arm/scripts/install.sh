@@ -13,13 +13,10 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 White='\033[0;37m'        # White
 
-sudo chmod +x ./gazebo.sh
 sudo chmod +x ./ros2.sh
 sudo chmod +x ./additional.sh
 
 ./ros2.sh
-
-./gazebo.sh
 
 ./additional.sh
 
