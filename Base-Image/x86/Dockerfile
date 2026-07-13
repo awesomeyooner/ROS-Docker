@@ -55,11 +55,11 @@ RUN sudo rm -rf /tmp/scripts
 
 # ===== END OF SCRIPTS =====
 
+# ===== ENTRYPOINT =====
 COPY entrypoint.sh entrypoint.sh
 
 RUN sudo chmod +x entrypoint.sh
 
-# ENTRYPOINT [ "/home/ubuntu/entrypoint.sh" ]
-# CMD [ "ros2", "launch", "ros_gz_sim", "gz_sim.launch.py" ]
+ENTRYPOINT [ "/home/ubuntu/entrypoint.sh" ]
 
 CMD [ "/bin/bash" ]

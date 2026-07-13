@@ -41,6 +41,9 @@ COPY scripts /tmp/scripts
 
 WORKDIR /tmp/scripts
 
+# Install Anaconda FIRST so that subsequent calls can use pip properly
+RUN sudo chmod +x anaconda.sh && ./anaconda.sh
+
 # Install Main Components
 RUN sudo chmod +x install.sh && ./install.sh
 
@@ -52,11 +55,11 @@ RUN sudo rm -rf /tmp/scripts
 
 # ===== END OF SCRIPTS =====
 
+# ===== ENTRYPOINT =====
 COPY entrypoint.sh entrypoint.sh
 
 RUN sudo chmod +x entrypoint.sh
 
-# ENTRYPOINT [ "/home/ubuntu/entrypoint.sh" ]
-# CMD [ "ros2", "launch", "ros_gz_sim", "gz_sim.launch.py" ]
+ENTRYPOINT [ "/home/ubuntu/entrypoint.sh" ]
 
 CMD [ "/bin/bash" ]
