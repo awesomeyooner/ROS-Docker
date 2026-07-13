@@ -22,7 +22,8 @@ sudo apt install -y ros-jazzy-ros2-control \
     ros-jazzy-ros2-controllers \
     ros-jazzy-joint-state-publisher-gui \
     libserial-dev \
-    v4l-utils
+    v4l-utils \
+    ros-jazzy-image-transport-plugins
 
 # Install PIP Packages
 ~/anaconda3/bin/pip3 install catkin_pkg
