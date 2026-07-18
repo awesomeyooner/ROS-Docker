@@ -41,8 +41,11 @@ COPY scripts /tmp/scripts
 
 WORKDIR /tmp/scripts
 
-# Install Main Components
-RUN sudo chmod +x install.sh && ./install.sh
+# Install ros2
+RUN sudo chmod +x ros2.sh && ./ros2.sh
+
+# Install Additional packages
+RUN sudo chmod +x additional.sh && ./additional.sh 
 
 # Switch back to HOME
 WORKDIR /home/${USERNAME}

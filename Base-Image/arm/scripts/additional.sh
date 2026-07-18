@@ -21,8 +21,9 @@ source ~/.bashrc
 sudo apt install -y ros-jazzy-ros2-control \
     ros-jazzy-ros2-controllers \
     ros-jazzy-joint-state-publisher-gui \
+    ros-jazzy-image-transport-plugins \
+    ros-jazzy-xacro \
     libserial-dev \
-    v4l-utils \
-    ros-jazzy-image-transport-plugins
+    v4l-utils
 
 echo -e "Finished Installing ${Green}Extra Bits${Color_Off}!"
