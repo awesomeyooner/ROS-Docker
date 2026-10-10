@@ -15,6 +15,7 @@ docker run \
     --name ${CONTAINER_NAME} \
     -e TERM=xterm-256color \
     --user $(id -u):$(id -g) \
+    --volume "$(dirname "$(realpath "$0")")/Documents":/home/ubuntu/Documents \
     --net=host \
     --env DISPLAY=$DISPLAY \
     --env QT_X11_NO_MITSHM=1 \
